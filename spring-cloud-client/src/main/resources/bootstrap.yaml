@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cloud-client
+  cloud:
+    config:
+      uri:
+        - http://localhost:8083
+        - http://localhost:8084

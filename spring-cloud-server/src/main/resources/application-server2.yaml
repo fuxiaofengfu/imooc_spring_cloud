@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eureka-server
+  profiles: server2
+server:
+  port: 8082
+eureka:
+  instance:
+    hostname: eureka-server2
+  client:
+    #fetch-registry: false
+    #register-with-eureka: false
+    serviceUrl:
+      defaultZone: http://eureka-server1:8081/eureka
