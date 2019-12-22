@@ -1,0 +1,23 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: cloud-client2
+#  cloud:
+#    config:
+#      uri:
+#        - http://localhost:8083
+#        - http://localhost:8084
+#spring:
+#  sleuth:
+#    sampler:
+#      probability: 1.0
+#  zipkin:
+#    base-url: http://localhost:8087/
+#    service:
+#      name: ${spring.application.name}
+#    discovery-client-enabled: true
+#logging:
+#  level:
+#    zipkin2: DEBUG
+#debug: true
