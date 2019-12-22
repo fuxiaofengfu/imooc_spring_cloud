@@ -1,11 +1,9 @@
 spring:
-  # profiles: eureka-server1
+  profiles: server1
   application:
     name: eureka-server
-
 server:
   port: 8081
-
 eureka:
   instance:
     hostname: eureka-server1
