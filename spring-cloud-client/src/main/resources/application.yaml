@@ -1,5 +1,9 @@
 spring.profiles: client1
-spring.profiles.include: client1
+spring:
+  profiles:
+    include: client1
 ---
 spring.profiles: client2
-spring.profiles.include: client2
+spring:
+  profiles:
+    include: client2
