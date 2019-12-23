@@ -1,3 +1,12 @@
+---
+spring.profiles: server1
 spring:
   profiles:
     include: server1
+...
+---
+spring.profiles: server2
+spring:
+  profiles:
+    include: server2
+...
