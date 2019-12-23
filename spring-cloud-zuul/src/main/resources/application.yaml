@@ -1,4 +1,6 @@
 zuul:
+  ignoredHeaders: my-custom
+  sensitiveHeaders: my-custom1111
   routes:
     client1:
       path: /client1/**
@@ -6,7 +8,12 @@ zuul:
     client2:
       path: /client2/**
       serviceId: cloud-client2
-
+    forward1:
+      path: /forward/**
+      url: http://192.168.1.101:8089/
+  ErrorFilterDemo:
+    error:
+      disable: true
 #spring:
 #  sleuth:
 #    sampler:
@@ -17,3 +24,4 @@ zuul:
 #  level:
 #    zipkin2: DEBUG
 #debug: true
+

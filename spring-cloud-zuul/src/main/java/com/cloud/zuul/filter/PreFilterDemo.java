@@ -8,15 +8,15 @@ import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;
 
-public class PostFilterDemo extends ZuulFilter {
+public class PreFilterDemo extends ZuulFilter {
 	@Override
 	public String filterType() {
-		return FilterConstants.POST_TYPE;
+		return FilterConstants.PRE_TYPE;
 	}
 
 	@Override
 	public int filterOrder() {
-		return FilterConstants.SEND_RESPONSE_FILTER_ORDER - 1;
+		return FilterConstants.PRE_DECORATION_FILTER_ORDER + 1;
 	}
 
 	@Override
@@ -31,9 +31,8 @@ public class PostFilterDemo extends ZuulFilter {
 		Enumeration<String> headerNames = request.getHeaderNames();
 		while(headerNames.hasMoreElements()){
 			String header = headerNames.nextElement();
-			System.out.println("postfilter***********"+ header +"=="+request.getHeader(header));
+			System.out.println("prefilter***********"+ header +"=="+request.getHeader(header));
 		}
-		//return null;
-		throw new ZuulException("sssss",500,"eeeeee");
+		return null;
 	}
 }

@@ -2,6 +2,7 @@ package com.cloud.zuul;
 
 import com.cloud.zuul.filter.ErrorFilterDemo;
 import com.cloud.zuul.filter.PostFilterDemo;
+import com.cloud.zuul.filter.PreFilterDemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -23,5 +24,10 @@ public class CloudZuulApplication {
 	@Bean
 	public ErrorFilterDemo getErrorFilterDemo() {
 		return new ErrorFilterDemo();
+	}
+
+	@Bean
+	public PreFilterDemo getPreFilterDemo(){
+		return new PreFilterDemo();
 	}
 }

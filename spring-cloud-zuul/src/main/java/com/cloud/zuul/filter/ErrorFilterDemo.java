@@ -1,6 +1,5 @@
 package com.cloud.zuul.filter;
 
-import com.netflix.client.http.HttpResponse;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -21,16 +20,16 @@ public class ErrorFilterDemo extends ZuulFilter {
 
 	@Override
 	public boolean shouldFilter() {
-		return true;
+		RequestContext ctx = RequestContext.getCurrentContext();
+		return ctx.getThrowable() != null;
 	}
 
 	@Override
 	public Object run() throws ZuulException {
-
 		RequestContext currentContext = RequestContext.getCurrentContext();
 		Throwable throwable = currentContext.getThrowable();
-		currentContext.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-		currentContext.set("error.exception",throwable.getCause());
+//		currentContext.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+//		currentContext.set("error.exception", throwable.getCause());
 		return null;
 	}
 }
