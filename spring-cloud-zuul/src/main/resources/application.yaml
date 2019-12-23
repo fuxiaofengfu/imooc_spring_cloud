@@ -11,9 +11,18 @@ zuul:
     forward1:
       path: /forward/**
       url: http://192.168.1.101:8089/
+    custom_service:
+      path: /custom_service/**
+      serviceId: custom_serviceId
   ErrorFilterDemo:
     error:
       disable: true
+ribbon:
+  eureka:
+    enabled: false
+custom_serviceId:
+  ribbon:
+    listOfServers: http://192.168.1.101:8088/,http://192.168.1.101:8089/
 #spring:
 #  sleuth:
 #    sampler:
@@ -24,4 +33,3 @@ zuul:
 #  level:
 #    zipkin2: DEBUG
 #debug: true
-

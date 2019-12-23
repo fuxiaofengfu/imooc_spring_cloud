@@ -5,8 +5,6 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 
-import javax.servlet.http.HttpServletResponse;
-
 public class ErrorFilterDemo extends ZuulFilter {
 	@Override
 	public String filterType() {

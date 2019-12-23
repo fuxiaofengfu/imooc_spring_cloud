@@ -29,11 +29,11 @@ public class PostFilterDemo extends ZuulFilter {
 		RequestContext currentContext = RequestContext.getCurrentContext();
 		HttpServletRequest request = currentContext.getRequest();
 		Enumeration<String> headerNames = request.getHeaderNames();
-		while(headerNames.hasMoreElements()){
+		while (headerNames.hasMoreElements()) {
 			String header = headerNames.nextElement();
-			System.out.println("postfilter***********"+ header +"=="+request.getHeader(header));
+			System.out.println("postfilter***********" + header + "==" + request.getHeader(header));
 		}
-		//return null;
-		throw new ZuulException("sssss",500,"eeeeee");
+		return null;
+		//throw new ZuulException("sssss",500,"eeeeee");
 	}
 }
