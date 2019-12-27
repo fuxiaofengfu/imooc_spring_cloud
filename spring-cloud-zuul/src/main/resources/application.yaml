@@ -16,6 +16,9 @@ zuul:
       serviceId: custom_serviceId
   ErrorFilterDemo:
     error:
+      disable: false
+  SendErrorFilter:
+    error:
       disable: true
 ribbon:
   eureka:
